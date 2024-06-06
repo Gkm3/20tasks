@@ -1,11 +1,6 @@
 <?php 
 
-$host = 'localhost';
-$dbname = 'qwerty';
-$username = 'root';
-$password = 'Y1zzcK0o-Wb!';
-
-$pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+include "./db_conn.php";
 $query = "SELECT * FROM tasks";
 $stmt = $pdo->prepare($query);
 $stmt->execute();

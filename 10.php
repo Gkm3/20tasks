@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$dbname = 'qwerty';
-$username = 'root';
-$password = 'Y1zzcK0o-Wb!';
-
-$pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+include "./db_conn.php";
 $query = "insert into articles (paragraph) values (:paragraph)";
 $stmt = $pdo->prepare($query);
 $stmt->bindParam(":paragraph", $paragraph);

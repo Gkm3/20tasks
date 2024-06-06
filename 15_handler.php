@@ -1,15 +1,10 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$dbname = 'qwerty';
-$username = 'root';
-$password = 'Y1zzcK0o-Wb!';
+include "./db_conn.php";
 
 $email = $_POST['email'];
 $pass = $_POST['password'];
-
-$pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 $sql = "select * from accounts where email=:email";
 $stmt = $pdo->prepare($sql);

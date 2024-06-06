@@ -1,13 +1,7 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$dbname = 'qwerty';
-$username = 'root';
-$password = 'Y1zzcK0o-Wb!';
-$paragraph = $_POST['paragraph'];
-
-$pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+include "./db_conn.php";
 
 $sql = "select * from articles where paragraph=:paragraph";
 $stmt = $pdo->prepare($sql);
